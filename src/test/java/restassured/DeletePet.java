@@ -1,6 +1,5 @@
 package restassured;
 
-import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
@@ -15,8 +14,7 @@ public class DeletePet {
         id = addNewPet().then()
                 .extract().path("id");
 
-        given(requestSpecification).log().all()
-                .filter(new AllureRestAssured())
+        given(requestSpecification)
                 .contentType(ContentType.JSON)
                 .when()
                 .delete(String.valueOf(id))

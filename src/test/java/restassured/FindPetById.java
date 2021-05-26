@@ -1,6 +1,5 @@
 package restassured;
 
-import io.qameta.allure.restassured.AllureRestAssured;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
@@ -14,8 +13,7 @@ public class FindPetById {
         id = addNewPet().then().assertThat()
                 .extract().path("id");
 
-        given(requestSpecification).log().all()
-                .filter(new AllureRestAssured())
+        given(requestSpecification)
                 .when()
                 .get("/"+id)
                 .then()
@@ -30,8 +28,7 @@ public class FindPetById {
     public void findPetByIdInvalid() {
 
         int id = 0;
-        given(requestSpecification).log().all()
-                .filter(new AllureRestAssured())
+        given(requestSpecification)
                 .when()
                 .get("/"+id)
                 .then()

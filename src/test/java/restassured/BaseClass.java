@@ -1,28 +1,18 @@
 package restassured;
 
-import static io.restassured.RestAssured.given;
-
-import io.qameta.allure.restassured.AllureRestAssured;
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-
-import java.io.File;
-
+import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import io.restassured.builder.RequestSpecBuilder;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
-import org.hamcrest.core.Is;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
-import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
+import org.json.simple.JSONObject;
+
+import static io.restassured.RestAssured.given;
 
 public class BaseClass {
 
-    static final String baseURI = "https://petstore.swagger.io/v2/";
-    //private RequestSpecification requestSpecification;
     static int id;
     static String updatedName = "Updated" + RandomStringUtils.randomAlphabetic(6);
 
@@ -61,12 +51,12 @@ public class BaseClass {
 
     public static Response addNewPet(){
         id = RandomUtils.nextInt();
-        return given(requestSpecification).log().all().contentType(ContentType.JSON).with().body(createRequest(id)).when().post();
+        return given(requestSpecification).contentType(ContentType.JSON).with().body(createRequest(id)).when().post();
     }
 
 
     public static Response deleteNewPet(int id){
-        return given(requestSpecification).delete("/pet/"+id);
+        return given(requestSpecification).delete("/"+id);
     }
 
 }

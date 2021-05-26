@@ -1,6 +1,5 @@
 package restassured;
 
-import io.qameta.allure.restassured.AllureRestAssured;
 import org.hamcrest.core.Is;
 import org.testng.annotations.Test;
 
@@ -16,8 +15,7 @@ public class ViewPet {
         id = addNewPet().then()
                 .extract().path("id");
 
-        given(requestSpecification).log().all()
-                .filter(new AllureRestAssured())
+        given(requestSpecification)
                 .when()
                 .get(String.valueOf(id))
                 .then()

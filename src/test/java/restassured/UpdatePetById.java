@@ -1,6 +1,5 @@
 package restassured;
 
-import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;
 import org.hamcrest.core.Is;
 import org.testng.annotations.Test;
@@ -16,8 +15,7 @@ public class UpdatePetById {
         id = addNewPet().then().assertThat()
                 .extract().path("id");
 
-        given(requestSpecification).log().all()
-                .filter(new AllureRestAssured())
+        given(requestSpecification)
                 .contentType(ContentType.URLENC)
                 .formParam("name", updatedName)
                 .when()

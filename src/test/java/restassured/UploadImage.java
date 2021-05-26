@@ -1,15 +1,12 @@
 package restassured;
 
-import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;
-import org.hamcrest.core.Is;
 import org.testng.annotations.Test;
 
 import java.io.File;
 
 import static io.restassured.RestAssured.given;
 import static restassured.BaseClass.*;
-import static restassured.BaseClass.id;
 
 public class UploadImage {
 
@@ -19,8 +16,7 @@ public class UploadImage {
         id = addNewPet().then()
                 .extract().path("id");
 
-        given(requestSpecification).log().all()
-                .filter(new AllureRestAssured())
+        given(requestSpecification)
                 .contentType(ContentType.MULTIPART)
                 .formParam("additionalMetadata", "image")
                 .multiPart("file", new File("src/main/resources/dog.png"), "image/png")

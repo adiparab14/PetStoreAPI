@@ -1,15 +1,9 @@
 package restassured;
 
-import restassured.BaseClass.*;
-import io.qameta.allure.restassured.AllureRestAssured;
-import io.restassured.http.ContentType;
 import org.hamcrest.core.Is;
 import org.testng.annotations.Test;
 
-import static io.restassured.RestAssured.given;
-import static restassured.BaseClass.addNewPet;
-import static restassured.BaseClass.deleteNewPet;
-import static restassured.BaseClass.id;
+import static restassured.BaseClass.*;
 
 public class AddPet {
 
