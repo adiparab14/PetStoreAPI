@@ -40,7 +40,7 @@ Follow the installation instructions from [here](http://www.baeldung.com/install
 
 In both the cases, results are available in [Calliope](http://calliope.pro/).
 
-###Running locally
+### Running locally
 - Clone this git project
 
 - Navigate to the root of the project and run the below command
@@ -57,7 +57,7 @@ Uploading Results
 sh calliope_results
 ```
 
-###Running via CircleCI
+### Running via CircleCI
 
 - Fork this project on github.
 
