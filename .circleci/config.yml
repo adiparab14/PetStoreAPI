@@ -25,7 +25,7 @@ jobs:
           
       - run:
           name: Results
-          command: curl -X POST -H Content-Type:multipart/form-data -H x-api-key:${api_key} -F file[]=@target/surefire-reports/testng-results.xml https://app.calliope.pro/api/v2/profile/{profileid}/import/testng
+          command: curl -X POST -H Content-Type:multipart/form-data -H x-api-key:${api_key} -F file[]=@target/surefire-reports/testng-results.xml https://app.calliope.pro/api/v2/profile/${profileid}/import/testng
 
 workflows:
   # Below is the definition of your workflow.
