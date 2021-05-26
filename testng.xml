@@ -1,0 +1,43 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "TestSuite">
+    <test name = "Add Pet">
+        <classes>
+            <class name = "restassured.AddPet" />
+        </classes>
+    </test>
+    <test name = "Delete Pet">
+        <classes>
+            <class name = "restassured.DeletePet" />
+        </classes>
+    </test>
+    <test name = "Update Pet By Id">
+        <classes>
+            <class name = "restassured.UpdatePetById" />
+        </classes>
+    </test>
+    <test name = "View Pet Details">
+        <classes>
+            <class name = "restassured.ViewPet" />
+        </classes>
+    </test>
+    <test name="Find Pet By Id">
+        <classes>
+            <class name = "restassured.FindPetById" />
+        </classes>
+    </test>
+    <test name="Find Pet By Status">
+        <classes>
+            <class name = "restassured.FindPetByStatus" />
+        </classes>
+    </test>
+    <test name="Update Pet">
+        <classes>
+            <class name = "restassured.UpdatePet" />
+        </classes>
+    </test>
+    <test name="Upload Pet Image">
+        <classes>
+            <class name = "restassured.UploadImage" />
+        </classes>
+    </test>
+</suite>

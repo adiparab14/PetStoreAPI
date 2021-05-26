@@ -1,0 +1,2 @@
+source src/main/resources/config.properties
+curl -X POST -H "Content-Type:multipart/form-data" -H "x-api-key:${api_key}" -F "file[]=@target/surefire-reports/testng-results.xml" "https://app.calliope.pro/api/v2/profile/${profileid}/import/testng"
